@@ -30,7 +30,7 @@ while several packages build (just this one time).
   (i.e., any vector shorter than `threshold * L` is discarded).
 
 * Small parameters like `log N=150`, `log L=16`, `log S=16` will cause
-  the sieve to finish relatively quickly (and using relatively little
+  the sieve to finish relatively quickly (and use relatively little
   memory), and will give you an idea of how it works and how to
   interpret the output.
 
