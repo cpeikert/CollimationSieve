@@ -1,0 +1,64 @@
+name:                collimation-sieve
+version:             0.1.0.0
+github:              "githubuser/collimation-sieve"
+license:             BSD3
+author:              "Chris Peikert"
+maintainer:          "cpeikert@alum.mit.edu"
+copyright:           "2019 Chris Peikert"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Collimation sieve simulator and benchmarker
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Bitbucket at <https://bitbucket.com/chrispeikert/collimationsieve>
+
+dependencies:
+- base >= 4.7 && < 5
+- vector
+- vector-th-unbox
+- massiv
+- data-dword
+- mtl
+- multiset
+- random
+- MonadRandom
+- crypto-api
+- monadcryptorandom
+- DRBG
+- logging-effect
+- ansi-terminal
+- timeit
+
+library:
+  source-dirs: src
+
+executables:
+  collimation-sieve-exe:
+    main:                Main.hs
+    source-dirs:         src
+    ghc-options:
+    - -O2
+    - -funbox-strict-fields
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - collimation-sieve
+
+tests:
+  collimation-sieve-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - collimation-sieve

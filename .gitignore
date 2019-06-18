@@ -1,0 +1,8 @@
+.stack-work/
+collimation-sieve.cabal
+*~
+TAGS
+**/*.aux
+**/*.hp
+**/*.prof
+**/*.ps
